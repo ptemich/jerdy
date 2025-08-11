@@ -11,6 +11,12 @@
 <header class="bg-white container mx-auto py-8">
     <h1 class="text-4xl font-bold px-4">Welcome to Spring Boot Tailwind</h1>
     <p class="bg-amber-200">TEST tailwind reloads</p>
+    <button id="buttonTarget"
+            hx-get="/button-click"
+            hx-target="#buttonTarget"
+            hx-swap="outerHTML">
+        CLICK ME !
+    </button>
 </header>
 </body>
 </html>

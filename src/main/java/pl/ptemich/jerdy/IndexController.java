@@ -11,4 +11,9 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/button-click")
+    public String loadOnClick() {
+        return "action";
+    }
+
 }
