@@ -1,0 +1,16 @@
+{
+  "name": "jerdy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./styles.css -o ../resources/static/main.css --minify",
+    "watch": "tailwindcss -i ./styles.css -o ../resources/static/main.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "description": ""
+}
