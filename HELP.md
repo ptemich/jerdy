@@ -50,3 +50,22 @@ If you manually switch to a different parent and actually want the inheritance, 
 ```
     npm run watch
 ```
+
+
+
+SOLID
+- single responsibility
+- open / close 
+- liskov substitute
+- interface separation
+- dependency inversion
+
+ACID
+- atomicity (atomowość)
+- consistency (spoójność)
+- isolation (izolacja)
+- durability (trwałość)
+
+
+DRY, KISS, YAGNI
+
