@@ -1,12 +1,13 @@
 package pl.ptemich.jerdy.game.core;
 
 import pl.ptemich.jerdy.game.Tank;
+import pl.ptemich.jerdy.game.inputs.MouseGameCallback;
 import pl.ptemich.jerdy.game.swing.GamePanel;
 import pl.ptemich.jerdy.game.swing.GameWindow;
 
 import java.awt.Graphics;
 
-public class Game implements Runnable {
+public class Game implements Runnable, MouseGameCallback {
 
 	private GamePanel gamePanel;
 	private Thread gameThread;
@@ -102,5 +103,10 @@ public class Game implements Runnable {
 
     public Tank getTank() {
         return tank;
+    }
+
+    @Override
+    public void moveMouse(int x, int y) {
+        tank.setTargetPosition(x, y);
     }
 }

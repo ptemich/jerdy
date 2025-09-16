@@ -6,16 +6,20 @@ import java.awt.*;
 
 public class Tank extends GameEntity {
 
+    private static double SPEED = 1.5;
     private Game game;
 
     private double x = 100;
     private double y = 100;
 
-    private double vx = -1;
-    private double vy = -1;
+    private double vx = 0;
+    private double vy = 0;
 
     private int width = 10;
     private int height = 10;
+
+    private int targetX;
+    private int targetY;
 
     public Tank(Game game) {
         this.game = game;
@@ -28,6 +32,18 @@ public class Tank extends GameEntity {
 
     @Override
     public void update() {
+        if (targetX != x) {
+            vx = targetX > x ? SPEED : -SPEED;
+        } else {
+            vx = 0;
+        }
+
+        if (targetY != y) {
+            vy = targetY > y ? SPEED : -SPEED;
+        } else {
+            vy = 0;
+        }
+
         x += vx;
         y += vy;
 
@@ -43,7 +59,12 @@ public class Tank extends GameEntity {
     @Override
     public void render(Graphics g) {
         if (x > 0 && y > 0) {
-            g.fillRect((int) x - width / 2, (int) y - height / 2, width, height);
+            g.fillOval((int) x - width / 2, (int) y - height / 2, width, height);
         }
+    }
+
+    public void setTargetPosition(int x, int y) {
+        targetX = x;
+        targetY = y;
     }
 }

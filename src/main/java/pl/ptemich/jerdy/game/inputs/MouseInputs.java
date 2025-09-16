@@ -8,16 +8,16 @@ import java.awt.event.MouseMotionListener;
 
 public class MouseInputs implements MouseListener, MouseMotionListener {
 
-    private Game game;
+    private MouseGameCallback gameCallback;
 
-    public MouseInputs(Game game) {
-        this.game = game;
+    public MouseInputs(MouseGameCallback gameCallback) {
+        this.gameCallback = gameCallback;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         System.out.println("X: " + e.getX() + " Y:" + e.getY());
-        game.getTank().moveTo(e.getX(), e.getY());
+        //game.getTank().moveTo(e.getX(), e.getY());
     }
 
     @Override
@@ -47,6 +47,6 @@ public class MouseInputs implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-
+        gameCallback.moveMouse(e.getX(), e.getY());
     }
 }
