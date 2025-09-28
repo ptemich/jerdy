@@ -1,5 +1,6 @@
 package pl.ptemich.jerdy.game.core;
 
+import pl.ptemich.jerdy.game.ActivityBar;
 import pl.ptemich.jerdy.game.Tank;
 import pl.ptemich.jerdy.game.inputs.MouseGameCallback;
 import pl.ptemich.jerdy.game.swing.GamePanel;
@@ -16,6 +17,7 @@ public class Game implements Runnable, MouseGameCallback {
 	private final int UPS_SET = 200;
 
     private Tank tank;
+    private ActivityBar activityBar;
 
 	public final static int TILES_DEFAULT_SIZE = 32;
 	public final static float SCALE = 1f;
@@ -38,6 +40,7 @@ public class Game implements Runnable, MouseGameCallback {
 
 	private void initClasses() {
         tank = new Tank(this);
+        activityBar = new ActivityBar(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH / 2, 20);
 	}
 
 	private void startGameLoop() {
@@ -46,11 +49,13 @@ public class Game implements Runnable, MouseGameCallback {
 	}
 
 	public void update() {
-        tank.update();
+        // tank.update();
+        activityBar.update();
 	}
 
 	public void render(Graphics g) {
-        tank.render(g);
+        // tank.render(g);
+        activityBar.render(g);
 	}
 
 	@Override
